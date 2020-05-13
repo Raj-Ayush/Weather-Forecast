@@ -1,0 +1,45 @@
+<!doctype >
+<html>
+<head>
+	<title>Weather App</title>
+	{% load static %}
+	<!------Bootstrap-------->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<!------Weather Icons---->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
+	<!------font awesome----->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-----external css------>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link href='https://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</script>
+</head>
+<body>
+	<!---transparent Overlay--->
+	<div class = "hero">
+		<!--- navbar --->
+		<!-- Just an image -->
+		<nav class="navbar">
+  			<a class="navbar-brand" href="/">
+    			<i class = "fa fa-sun-o" width="50" height="30"></i> Local<strong>Weather </strong>
+  			</a>
+
+
+  			<span id= "date" class= "lead"><strong>{{dateTime.time}} | {{dateTime.Date}}</strong></span>
+		</nav>
+		<form action="current/" method= 'POST'>
+			{% csrf_token %}
+			<div id="search-box">
+				<input id = "mytext" class="search-txt" type="text" name="text"
+				placeholder="Type to search" value=''>
+				<input type = "image" name = 'submit' onClick="return empty()" src = "{% static 'images/search.png' %}" alt="Submit"
+				width="45px" height="42px" style="border-radius: 50%;
+				">
+			</div>
+		</form>
+	</div>
+	<script src="{% static 'js/weather.js' %}" type="text/javascript"></script>
+</body>
+
+		

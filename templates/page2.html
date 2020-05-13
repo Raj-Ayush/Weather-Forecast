@@ -1,0 +1,91 @@
+<!doctype >
+<html>
+<head>
+	<title>Weather App</title>
+	{% load static %}
+	<!------Bootstrap-------->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<!------Weather Icons---->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
+	<!------font awesome----->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-----external css------>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link href='https://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</script>
+</head>
+<body>
+	<!---transparent Overlay--->
+	<div class = "hero">
+		<!--- navbar --->
+		<!-- Just an image -->
+		<nav class="navbar">
+  			<a class="navbar-brand" href="/">
+    			<i class = "fa fa-sun-o" width="50" height="30"></i> Local<strong>Weather </strong>
+  			</a>
+  			<span id= "date" class= "lead"><strong>{{city_weather.time}} | {{city_weather.Date}}</strong></span>
+		</nav>
+		<!--- weather section--->
+		<div class ="container">
+			<div class="row">
+				<div class="col-8 weather mx-auto">
+					<div class="weather-head">
+						<h1 id="Location" class="
+						text-center display-4">{{ city_weather.city }}</h1>
+						<div class="row">
+							<div id="description" class="col-6 text-center">
+							<i id="icon-desc" class="wi
+							wi-owm-{{ city_weather.id }}"></i>
+							<p class="desc">{{ city_weather.description }}</p>
+							</div>
+							<div id="temperature" class="col-6 text-center">
+								{{ city_weather.temperature }}&#176<i id="icon-thermometer"
+								class="wi wi-thermometer"></i>
+							</div>
+						</div>
+					</div>
+					<!---weather body section--->
+					<div class="weather-body">
+						<div class="row">
+							<div class="humidity col-4 
+							text-center">
+							<i class="wi wi-raindrops">
+							</i>
+								<span>Humidity</span>
+							</div>
+							<div class="precipitation col-4 
+							text-center">
+							<i class="wi wi-humidity"></i>
+								<span>Precipitation</span>
+							</div>
+							<div class="wind col-4 
+							text-center">
+							<i class="wi wi-strong-wind"></i>
+								<span>Wind Speed</span>
+							</div>
+						</div>
+						<!---weather body data--->
+						<div class="row">
+							<div class="humidity-data col-4 
+							text-center">
+								{{ city_weather.Humidity }}%
+							</div>
+							<div class="precipitation-data col-4 
+							text-center">
+								62%
+							</div>
+							<div class="wind-data col-4 
+							text-center">
+								{{ city_weather.wind }}m/h
+							</div>
+						</div>
+
+					</div>	
+
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
